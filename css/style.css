@@ -1,0 +1,226 @@
+:root{
+    --outer-color: #0E277B;
+    --accent-color: #0138D4;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: var(--outer-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+}
+
+.search-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.search-container h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    background: var(--outer-color);
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.search-bar button:hover {
+    background-color: var(--accent-color);
+}
+
+.welcome, .consoles, .latest-roms, .rom-details, .rom-description {
+    padding: 2rem;
+    text-align: center;
+}
+
+.welcome {
+    background-color: #f5f5f5;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.console-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    justify-content: center;
+}
+
+.rom-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    justify-content: center;
+}
+
+.rom-grid .rom-item, .console-grid .console-item {
+    margin: 1rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.console-grid .console-item img, .rom-grid .rom-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.console-grid .console-item p, .rom-grid .rom-item p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.console-grid .console-item:hover, .rom-grid .rom-item:hover {
+    transform: scale(1.05);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.section-header h2 {
+    margin: 0;
+}
+
+.view-all-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--outer-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.view-all-button:hover {
+    background-color: var(--accent-color);
+}
+
+.rom-item .rom-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.rom-item .rom-genre {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.rom-item .rom-details {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.rom-item .rom-details p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+.rom-item .rom-details p i {
+    margin-right: 5px;
+}
+
+footer {
+    background: var(--outer-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+footer nav ul li {
+    margin: 0 1rem;
+}
+
+footer nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#content {
+    width: 60vw;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
