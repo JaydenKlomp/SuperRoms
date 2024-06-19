@@ -67,4 +67,28 @@ function get_rom_details($conn, $rom_id) {
         return null;
     }
 }
-?>
+
+function list_posts($conn) {
+    $sql = "SELECT * FROM posts";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+            echo '<div class="post-item">';
+            echo '<img src="files/img/' . $row['image'] . '" alt="' . $row['title'] . '">';
+            echo '<div class="post-item-content">';
+            echo '<h3><a href="post_detail.php?id=' . $row['id'] . '">' . $row['title'] . '</a></h3>';
+            echo '<p class="post-date"><i class="fas fa-calendar-alt"></i> ' . $row['date'] . '</p>';
+            echo '<p>' . substr($row['content'], 0, 100) . '...</p>';
+            echo '</div></div>';
+        }
+    } else {
+        echo "0 results";
+    }
+}
+
+function get_post($conn, $id) {
+    $sql = "SELECT * FROM posts WHERE id = $id";
+    $result = mysqli_query($conn, $sql);
+    return mysqli_fetch_assoc($result);
+}
+

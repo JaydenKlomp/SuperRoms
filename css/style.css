@@ -1,7 +1,7 @@
-:root{
+:root {
     --outer-color: #0E277B;
     --accent-color: #0138D4;
-  }
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -14,6 +14,7 @@ header {
     background: var(--outer-color);
     color: white;
     padding: 1rem;
+    padding-inline: 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -95,14 +96,14 @@ nav ul li a {
     background-color: var(--accent-color);
 }
 
-.welcome, .consoles, .latest-roms, .rom-details, .rom-description {
+.welcome, .consoles, .latest-roms, .rom-details, .rom-description, .latest-posts {
     padding: 2rem;
     text-align: center;
 }
 
 .welcome {
     background-color: #f5f5f5;
-    margin-top: 50px;
+    margin-block: 50px;
     border-radius: 10px;
 }
 
@@ -120,22 +121,46 @@ nav ul li a {
     justify-content: center;
 }
 
-.rom-grid .rom-item, .console-grid .console-item {
+.console-grid .console-item {
     margin: 1rem;
     padding: 1rem;
     background: #f5f5f5;
     border: 1px solid #ddd;
     text-align: center;
     transition: transform 0.3s;
+    align-content: center;
 }
 
-.console-grid .console-item img, .rom-grid .rom-item img {
+.rom-grid .rom-item {
+    margin: 1rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    text-align: center;
+    transition: transform 0.3s;
+    align-content: center;
+}
+
+.rom-grid .rom-item img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.console-grid .console-item img {
     max-width: 100%;
     height: auto;
     margin-bottom: 0.5rem;
 }
 
-.console-grid .console-item p, .rom-grid .rom-item p {
+.rom-grid .rom-item p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.console-grid .console-item p {
     margin: 0.5rem 0;
     font-size: 1rem;
     font-weight: bold;
@@ -184,6 +209,7 @@ nav ul li a {
 .rom-item .rom-details {
     text-align: center;
     margin-top: 10px;
+    padding: 0;
 }
 
 .rom-item .rom-details p {
@@ -220,7 +246,212 @@ footer nav ul li a {
 
 #content {
     width: 60vw;
+    margin: 0 auto;
+    text-align: left;
+}
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     justify-content: center;
+}
+
+.post-item {
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    padding: 1rem;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+}
+
+.post-item img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.post-item-content {
+    text-align: left;
+}
+
+.post-item-content h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.post-item-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.post-detail {
+    padding: 2rem;
+    text-align: left;
+    max-width: 800px;
     margin: 0 auto;
 }
+
+.breadcrumb {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--outer-color);
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+
+.breadcrumb span {
+    color: #666;
+}
+
+.post-detail h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.post-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.post-actions {
+    margin-bottom: 2rem;
+}
+
+.post-actions .share-button {
+    display: inline-block;
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--outer-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.post-actions .share-button:hover {
+    background-color: var(--accent-color);
+}
+
+.comment-section {
+    margin-top: 2rem;
+}
+
+.comment-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.comment-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-section textarea, .comment-section input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.comment-section button {
+    padding: 0.5rem 1rem;
+    background-color: var(--outer-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-section button:hover {
+    background-color: var(--accent-color);
+}
+
+/* New Styles to Match the Screenshot */
+/* Additional styles for the table */
+.rom-details {
+    display: flex;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.rom-image {
+    flex: 1;
+}
+
+.rom-info {
+    flex: 2;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+.rom-info h1 {
+    margin-top: 0;
+}
+
+.rom-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rom-info table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.rom-info table td:first-child {
+    font-weight: bold;
+}
+
+.rom-info table i {
+    margin-right: 8px;
+}
+
+.download-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--outer-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.download-button:hover {
+    background-color: var(--accent-color);
+}
+
+.rom-description {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.rom-description h2 {
+    margin-top: 0;
+}
+
+.rom-description p {
+    margin-bottom: 0;
+}
+

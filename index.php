@@ -14,10 +14,7 @@
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="#">ROMs</a></li>
-                <li><a href="#">Emulators</a></li>
-                <li><a href="#">Full Set (Pack)</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="posts.php">Posts</a></li>
             </ul>
         </nav>
     </header>
@@ -25,7 +22,7 @@
     <section class="hero">
         <img src="files/img/banner.jpeg" alt="Banner Image" class="banner-image">
         <div class="search-container">
-            <h1>Every single ROM in once place</h1>
+            <h1>Every single ROM in one place</h1>
             <div class="search-bar">
                 <input type="text" placeholder="Enter ROM name for search">
                 <button>Search</button>
@@ -34,10 +31,22 @@
     </section>
 
     <div id="content">
+
         <section class="welcome">
             <h2>Welcome to SUPERROMS.COM</h2>
-            <p>Download over 50,000 classic and modern games for free. We share the full ROM and ISO of the latest Nintendo and PlayStation platforms. Here you can download Redump and No-Intro validated ROMs for free. In addition, we also have some Pokemon hacking games, Mods.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam non, fugit veniam mollitia optio deserunt minima sequi expedita, odit quisquam quidem repudiandae placeat ipsum sit illum tenetur provident reprehenderit ullam.</p>
         </section>
+
+        <section class="latest-posts">
+            <div class="section-header">
+                <h2>Most Recent Posts</h2>
+                <a href="posts.php" class="view-all-button">View All</a>
+            </div>
+            <div class="post-grid">
+                <?php list_posts($conn); ?>
+            </div>
+        </section>
+
         <section class="consoles">
             <div class="section-header">
                 <h2>Rom Consoles</h2>
@@ -47,6 +56,7 @@
                 <?php list_consoles($conn); ?>
             </div>
         </section>
+
         <section class="latest-roms">
             <div class="section-header">
                 <h2>Latest ROMs</h2>
@@ -56,8 +66,8 @@
                 <?php list_roms($conn); ?>
             </div>
         </section>
+        
     </div>
-
     <?php include 'inc/footer.php'; ?>
 </body>
 </html>
